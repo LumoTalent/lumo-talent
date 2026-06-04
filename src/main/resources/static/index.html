@@ -1251,7 +1251,7 @@
     </div>
 
     <script>
-        const API = 'http://localhost:8082';
+        const API = window.location.origin;
 
         function token() { return localStorage.getItem('lumotoken') }
         function userEmail() { return localStorage.getItem('lumouser') }

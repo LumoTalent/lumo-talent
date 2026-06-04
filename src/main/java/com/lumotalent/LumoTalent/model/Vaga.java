@@ -23,6 +23,10 @@ public class Vaga {
     // ABERTA, EM_ANDAMENTO, ENCERRADA
     private String status;
 
+    private String setor;
+    private String area;
+    private String gestor;
+
     @ManyToMany
     @JoinTable(
             name = "vaga_candidatos",

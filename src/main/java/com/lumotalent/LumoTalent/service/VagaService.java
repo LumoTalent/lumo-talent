@@ -43,6 +43,9 @@ public class VagaService {
         Vaga vaga = buscarPorId(vagaId);
         Candidato candidato = candidatoRepository.findById(candidatoId)
                 .orElseThrow(() -> new RuntimeException("Candidato não encontrado"));
+        if (vaga.getCandidatos() == null) {
+            vaga.setCandidatos(new java.util.ArrayList<>());
+        }
         if (!vaga.getCandidatos().contains(candidato)) {
             vaga.getCandidatos().add(candidato);
         }
@@ -51,7 +54,9 @@ public class VagaService {
 
     public Vaga removerCandidato(Long vagaId, Long candidatoId) {
         Vaga vaga = buscarPorId(vagaId);
-        vaga.getCandidatos().removeIf(c -> c.getId().equals(candidatoId));
+        if (vaga.getCandidatos() != null) {
+            vaga.getCandidatos().removeIf(c -> c.getId().equals(candidatoId));
+        }
         return vagaRepository.save(vaga);
     }
 
