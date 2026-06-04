@@ -50,6 +50,15 @@ public class VagaController {
         }
     }
 
+    @DeleteMapping("/{vagaId}/candidatos/{candidatoId}")
+    public ResponseEntity<Vaga> removerCandidato(@PathVariable Long vagaId, @PathVariable Long candidatoId) {
+        try {
+            return ResponseEntity.ok(vagaService.removerCandidato(vagaId, candidatoId));
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletar(@PathVariable Long id) {
         vagaService.deletar(id);
