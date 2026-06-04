@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LumoTalent - Frontend mínimo</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>LumoTalent — Acesso</h1>
+
+    <div class="tabs">
+      <button id="btn-login" class="active">Login</button>
+      <button id="btn-register">Registrar</button>
+    </div>
+
+    <section id="login-section">
+      <input id="login-email" placeholder="Email" />
+      <input id="login-senha" placeholder="Senha" type="password" />
+      <button id="login-submit">Entrar</button>
+    </section>
+
+    <section id="register-section" style="display:none">
+      <input id="reg-nome" placeholder="Nome" />
+      <input id="reg-email" placeholder="Email" />
+      <input id="reg-senha" placeholder="Senha" type="password" />
+      <select id="reg-perfil">
+        <option value="CANDIDATO">Candidato</option>
+        <option value="RECRUTADOR">Recrutador</option>
+      </select>
+      <button id="reg-submit">Registrar</button>
+    </section>
+
+    <div id="message" class="message"></div>
+
+    <div id="after" style="display:none">
+      <h2>Logado</h2>
+      <pre id="token" class="token"></pre>
+      <button id="logout">Logout</button>
+    </div>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
+
