@@ -5,7 +5,7 @@
   },
   "deploy": {
     "startCommand": "",
-    "healthcheckPath": "/api/auth/login",
+    "healthcheckPath": "/api/health",
     "healthcheckTimeout": 60,
     "restartPolicyType": "ON_FAILURE"
   }
